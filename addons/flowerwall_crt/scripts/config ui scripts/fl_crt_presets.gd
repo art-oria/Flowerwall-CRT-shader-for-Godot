@@ -10,6 +10,7 @@ extends OptionButton
 @export var scanlines_op_sl: HSlider
 @export var scanlines_int_sl: HSlider
 @export var grain_sl: HSlider
+@export var grain_color: CheckButton
 @export var wiggle_sl: HSlider
 @export var curve_sl: HSlider
 @export var grid: CheckButton
@@ -27,6 +28,7 @@ func _on_preset_selected(value:int) -> void:
 			downscaling_sl.value = 3.0
 			preblurx_sl.value = 4.0
 			preblury_sl.value = 2.0
+			grain_color.button_pressed = true
 			grain_sl.value = 0.05
 			scanlines_size_sl.value = 1.0
 			scanlines_op_sl.value = 0.25
@@ -45,6 +47,7 @@ func _on_preset_selected(value:int) -> void:
 			downscaling_sl.value = 3.0
 			preblurx_sl.value = 4.0
 			preblury_sl.value = 2.0
+			grain_color.button_pressed = true
 			grain_sl.value = 0.05
 			scanlines_size_sl.value = 1.0
 			scanlines_op_sl.value = 0.25
@@ -63,6 +66,7 @@ func _on_preset_selected(value:int) -> void:
 			downscaling_sl.value = 4.0
 			preblurx_sl.value = 4.0
 			preblury_sl.value = 2.0
+			grain_color.button_pressed = true
 			grain_sl.value = 0.05
 			scanlines_size_sl.value = 2.0
 			scanlines_op_sl.value = 0.20
@@ -81,6 +85,7 @@ func _on_preset_selected(value:int) -> void:
 			downscaling_sl.value = 4.0
 			preblurx_sl.value = 4.0
 			preblury_sl.value = 2.0
+			grain_color.button_pressed = true
 			grain_sl.value = 0.05
 			scanlines_size_sl.value = 2.0
 			scanlines_op_sl.value = 0.20
@@ -99,6 +104,7 @@ func _on_preset_selected(value:int) -> void:
 			downscaling_sl.value = 2.0
 			preblurx_sl.value = 4.0
 			preblury_sl.value = 2.0
+			grain_color.button_pressed = true
 			grain_sl.value = 0.35
 			scanlines_size_sl.value = 3.0
 			scanlines_op_sl.value = 0.2
@@ -117,6 +123,7 @@ func _on_preset_selected(value:int) -> void:
 			downscaling_sl.value = 1.0
 			preblurx_sl.value = 0.0
 			preblury_sl.value = 0.0
+			grain_color.button_pressed = false
 			grain_sl.value = 0.0
 			scanlines_size_sl.value = 0.0
 			scanlines_op_sl.value = 0.0
