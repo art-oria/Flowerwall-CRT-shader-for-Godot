@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dmk7ono2imeae" path="res://addons/flowerwall_crt/scripts/flowerwall_crt_script.gd" id="1_8p6dx"]
 [ext_resource type="Script" uid="uid://dxlwhj47enyqa" path="res://addons/flowerwall_crt/scripts/config ui scripts/fl_crt_presets.gd" id="2_aii1a"]
-[ext_resource type="Material" path="res://addons/flowerwall_crt/shaders/blurx_shader.material" id="2_vteqg"]
+[ext_resource type="Material" uid="uid://cpmck6ic3uj1y" path="res://addons/flowerwall_crt/shaders/blurx_shader.material" id="2_vteqg"]
 [ext_resource type="Script" uid="uid://dao04qwl3ofs8" path="res://addons/flowerwall_crt/scripts/config ui scripts/fl_crt_ui_downscaling_slider.gd" id="7_mw406"]
 [ext_resource type="Script" uid="uid://tog6nmrph15b" path="res://addons/flowerwall_crt/scripts/config ui scripts/fl_crt_ui_slider.gd" id="8_orrbg"]
 [ext_resource type="Script" uid="uid://c5emn1tatcw1r" path="res://addons/flowerwall_crt/scripts/config ui scripts/fl_crt_ui_toggle.gd" id="9_30wqw"]
-[ext_resource type="Material" path="res://addons/flowerwall_crt/shaders/crt_shader.material" id="28_aii1a"]
-[ext_resource type="Material" path="res://addons/flowerwall_crt/shaders/blury_shader.material" id="28_yx2vx"]
-[ext_resource type="Material" path="res://addons/flowerwall_crt/shaders/bloom_shader.material" id="29_aii1a"]
+[ext_resource type="Material" uid="uid://b4jxbeuvh67vc" path="res://addons/flowerwall_crt/shaders/crt_shader.material" id="28_aii1a"]
+[ext_resource type="Material" uid="uid://cfwol042ljjei" path="res://addons/flowerwall_crt/shaders/blury_shader.material" id="28_yx2vx"]
+[ext_resource type="Material" uid="uid://chjqh3xh1hpnl" path="res://addons/flowerwall_crt/shaders/bloom_shader.material" id="29_aii1a"]
 [ext_resource type="Script" uid="uid://dtpi5lt33t6eg" path="res://addons/flowerwall_crt/scripts/config ui scripts/fl_crt_close.gd" id="32_8p6dx"]
 [ext_resource type="Script" uid="uid://ch7evcy0lie0m" path="res://addons/flowerwall_crt/scripts/config ui scripts/fl_crt_save.gd" id="32_jahb0"]
 
@@ -27,7 +27,7 @@ default_font_size = 12
 [sub_resource type="Theme" id="Theme_2pvsh"]
 default_font_size = 12
 
-[node name="flowerwall_pp" type="Control" unique_id=1736349292 node_paths=PackedStringArray("flowerwall_crt_config_ui", "preblur_x", "preblur_y", "post_bloom", "crt", "grid_toggle", "slot_toggle", "scanlines_size_slider", "scanlines_interval_slider")]
+[node name="flowerwall_crt" type="Control" unique_id=1736349292 node_paths=PackedStringArray("flowerwall_crt_config_ui", "preblur_x", "preblur_y", "post_bloom", "crt", "grid_toggle", "slot_toggle", "scanlines_size_slider", "scanlines_interval_slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
