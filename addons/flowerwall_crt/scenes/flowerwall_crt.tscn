@@ -27,7 +27,7 @@ default_font_size = 12
 [sub_resource type="Theme" id="Theme_2pvsh"]
 default_font_size = 12
 
-[node name="flowerwall_crt" type="Control" unique_id=1736349292 node_paths=PackedStringArray("flowerwall_crt_config_ui", "preblur_x", "preblur_y", "post_bloom", "crt", "grid_toggle", "slot_toggle", "scanlines_size_slider", "scanlines_interval_slider")]
+[node name="flowerwall_crt" type="Control" unique_id=1736349292 node_paths=PackedStringArray("flowerwall_crt_config_ui", "preblur_x", "preblur_y", "post_bloom", "crt", "grid_toggle", "slot_toggle", "colored_grain_toggle", "scanlines_size_slider", "scanlines_interval_slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,6 +45,7 @@ post_bloom = NodePath("post_bloom")
 crt = NodePath("CRT")
 grid_toggle = NodePath("UI/FlowerwallCrtConfigUi/Options/Enable Grid Mask/RGB_grid_toggle")
 slot_toggle = NodePath("UI/FlowerwallCrtConfigUi/Options/Enable Slot Mask/RGB_slot_toggle")
+colored_grain_toggle = NodePath("UI/FlowerwallCrtConfigUi/Options/Colored Grain/colored_grain_toggle")
 scanlines_size_slider = NodePath("UI/FlowerwallCrtConfigUi/Options/Scalines Size/scanlines_size_slider")
 scanlines_interval_slider = NodePath("UI/FlowerwallCrtConfigUi/Options/Scalines Interval/scanlines_interval_slider")
 
@@ -109,7 +110,7 @@ layer = 104
 offset_left = 2.0
 offset_top = 3.0
 offset_right = 478.0
-offset_bottom = 357.0
+offset_bottom = 395.0
 size_flags_horizontal = 4
 color = Color(0.121569, 0.121569, 0.121569, 0.721569)
 
@@ -361,6 +362,25 @@ script = ExtResource("8_orrbg")
 _mat = ExtResource("28_aii1a")
 _var = "shader_parameter/scanlines_opacity"
 
+[node name="Colored Grain" type="HBoxContainer" parent="UI/FlowerwallCrtConfigUi/Options" unique_id=2047618073]
+layout_mode = 2
+
+[node name="Colored Grain" type="Label" parent="UI/FlowerwallCrtConfigUi/Options/Colored Grain" unique_id=528037145]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Colorful grain"
+label_settings = SubResource("LabelSettings_4uar2")
+
+[node name="colored_grain_toggle" type="CheckButton" parent="UI/FlowerwallCrtConfigUi/Options/Colored Grain" unique_id=497501253]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+action_mode = 0
+alignment = 2
+script = ExtResource("9_30wqw")
+_mat = ExtResource("28_aii1a")
+_var = "shader_parameter/colored_grain"
+
 [node name="Grain Strength" type="HBoxContainer" parent="UI/FlowerwallCrtConfigUi/Options" unique_id=902497970]
 layout_mode = 2
 
@@ -508,9 +528,9 @@ _var = "shader_parameter/pixel_size"
 [node name="Save" type="Button" parent="UI/FlowerwallCrtConfigUi" unique_id=1996559080 node_paths=PackedStringArray("preblur_x_mat", "preblur_y_mat", "crt_mat", "bloom_mat")]
 layout_mode = 0
 offset_left = 345.0
-offset_top = 236.0
+offset_top = 276.0
 offset_right = 465.0
-offset_bottom = 276.0
+offset_bottom = 316.0
 scale = Vector2(0.9287003, 0.9287003)
 theme = SubResource("Theme_x4850")
 text = "Save
@@ -524,9 +544,9 @@ bloom_mat = NodePath("../../../post_bloom/bloom")
 [node name="Close" type="Button" parent="UI/FlowerwallCrtConfigUi" unique_id=825543894]
 layout_mode = 0
 offset_left = 345.0
-offset_top = 294.0
+offset_top = 334.0
 offset_right = 465.0
-offset_bottom = 336.0
+offset_bottom = 376.0
 scale = Vector2(0.9287003, 0.9287003)
 theme = SubResource("Theme_2pvsh")
 text = "Close
@@ -542,6 +562,7 @@ script = ExtResource("32_8p6dx")
 [connection signal="value_changed" from="UI/FlowerwallCrtConfigUi/Options/Scalines Interval/scanlines_interval_slider" to="." method="_on_scanlines_interval_slider_value_changed"]
 [connection signal="value_changed" from="UI/FlowerwallCrtConfigUi/Options/Scalines Size/scanlines_size_slider" to="." method="_on_scanlines_size_slider_value_changed"]
 [connection signal="value_changed" from="UI/FlowerwallCrtConfigUi/Options/Scalines Opacity/scanlines_opacity_slider" to="." method="_on_scanlines_opacity_slider_value_changed"]
+[connection signal="toggled" from="UI/FlowerwallCrtConfigUi/Options/Colored Grain/colored_grain_toggle" to="." method="_on_colored_grain_toggle_toggled"]
 [connection signal="value_changed" from="UI/FlowerwallCrtConfigUi/Options/Grain Strength/grain_slider" to="." method="_on_grain_slider_value_changed"]
 [connection signal="value_changed" from="UI/FlowerwallCrtConfigUi/Options/Wiggle Strength/wiggle_strength_slider" to="." method="_on_wiggle_strength_slider_value_changed"]
 [connection signal="value_changed" from="UI/FlowerwallCrtConfigUi/Options/Curvature Slider/curvature_slider" to="." method="_on_curvature_slider_value_changed"]

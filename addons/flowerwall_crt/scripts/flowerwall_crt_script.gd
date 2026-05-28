@@ -9,6 +9,7 @@ extends Control
 
 @export var grid_toggle: CheckButton
 @export var slot_toggle: CheckButton
+@export var colored_grain_toggle: CheckButton
 @export var scanlines_size_slider: HSlider
 @export var scanlines_interval_slider: HSlider
 var is_enabled: float = true
@@ -146,7 +147,6 @@ func _on_slotmask_toggle_toggled(toggled_on: bool) -> void:
 		CRT_SHADER.set("shader_parameter/enable_gridmask", false)
 	should_enable_crt()
 
-
 func _on_scanlines_opacity_slider_value_changed(value: float) -> void:
 	CRT_SHADER.set("shader_parameter/scanlines_opacity", value)
 	should_enable_crt()
@@ -165,6 +165,11 @@ func _on_scanlines_interval_slider_value_changed(value: float) -> void:
 		scanlines_size_slider.set_value_no_signal(value-1)
 		CRT_SHADER.set("shader_parameter/scanlines_thickness", value-1)
 	should_enable_crt()
+
+func _on_colored_grain_toggle_toggled(toggled_on: bool) -> void:
+	CRT_SHADER.set("shader_parameter/colored_grain", toggled_on)
+	should_enable_crt()
+
 
 func _on_grain_slider_value_changed(value: float) -> void:
 	CRT_SHADER.set("shader_parameter/grain_strength", value)

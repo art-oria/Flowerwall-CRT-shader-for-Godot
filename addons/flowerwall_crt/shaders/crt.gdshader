@@ -11,6 +11,7 @@ uniform float pixel_size: hint_range(3, 6, 1) = 3;
 
 group_uniforms grain_settings;
 uniform bool enable_grain = true;
+uniform bool colored_grain = true;
 uniform float grain_strength: hint_range(0.0, 1.0, 0.05) = 0.25;
 
 group_uniforms curving_settings;
@@ -98,14 +99,6 @@ vec3 Blur(vec2 uv, float d, int samples) {
     return sum;
 }
 
-  const float PHI = 1.61803398874989484820459;
-
-  float gold_noise(in vec2 xy, float seed)
-  {
-    return fract(tan(distance(xy*PHI, xy)*seed)*xy.x);
-  }
-
-
 void fragment()
 {
 	vec2 xy = SCREEN_UV;
@@ -154,17 +147,26 @@ void fragment()
 		color.rgb = final.rgb;
 	}
 
-	if(enable_grain) //tf is that
-		color.rgba +=
-		(vec4(filmGrainNoise(TIME +1., SCREEN_UV),
-		filmGrainNoise(TIME + 2., SCREEN_UV),
-		filmGrainNoise(TIME + 3., SCREEN_UV),
-		filmGrainNoise(TIME + 4., SCREEN_UV)) * grain_strength);
-		color.rgba -=
-		(vec4(filmGrainNoise(TIME +5., SCREEN_UV),
-		filmGrainNoise(TIME + 6., SCREEN_UV),
-		filmGrainNoise(TIME + 7., SCREEN_UV),
-		filmGrainNoise(TIME + 8., SCREEN_UV)) * grain_strength);
+	if(enable_grain) //????
+	{
+		if (colored_grain)
+		{
+			color.rgba +=
+			(vec4(filmGrainNoise(TIME + 1., SCREEN_UV),
+			filmGrainNoise(TIME + 2., SCREEN_UV),
+			filmGrainNoise(TIME + 3., SCREEN_UV),
+			filmGrainNoise(TIME + 4., SCREEN_UV)) * grain_strength);
+			color.rgba -=
+			(vec4(filmGrainNoise(TIME + 5., SCREEN_UV),
+			filmGrainNoise(TIME + 6., SCREEN_UV),
+			filmGrainNoise(TIME + 7., SCREEN_UV),
+			filmGrainNoise(TIME + 8., SCREEN_UV)) * grain_strength);
+		}
+		else
+		{
+			color.rgb = mix(color.rgb ,vec3(0.0), filmGrainNoise(TIME, SCREEN_UV) * grain_strength);
+		}
+	}
 
 	if(enable_gridmask)
 	{
