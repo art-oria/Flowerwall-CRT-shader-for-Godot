@@ -105,14 +105,14 @@ func _on_preset_selected(value:int) -> void:
 			preblurx_sl.value = 4.0
 			preblury_sl.value = 2.0
 			grain_color.button_pressed = true
-			grain_sl.value = 0.35
+			grain_sl.value = 0.2
 			scanlines_size_sl.value = 3.0
 			scanlines_op_sl.value = 0.2
 			scanlines_int_sl.value = 6.0
 			curve_sl.value = 1.025
 			wiggle_sl.value = 0.05
 			bloom_t.value = 0.05
-			bloom_i.value = 0.6
+			bloom_i.value = 0.5
 			smear_sl.value = 0.6
 			slot.button_pressed = false
 			grid.button_pressed = false
