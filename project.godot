@@ -26,6 +26,7 @@ window/size/viewport_height=1080
 window/size/initial_position_type=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
+window/vsync/vsync_mode=0
 
 [editor]
 
