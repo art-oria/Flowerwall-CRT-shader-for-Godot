@@ -48,6 +48,10 @@ slot_toggle = NodePath("UI/FlowerwallCrtConfigUi/Options/Enable Slot Mask/RGB_sl
 colored_grain_toggle = NodePath("UI/FlowerwallCrtConfigUi/Options/Colored Grain/colored_grain_toggle")
 scanlines_size_slider = NodePath("UI/FlowerwallCrtConfigUi/Options/Scalines Size/scanlines_size_slider")
 scanlines_interval_slider = NodePath("UI/FlowerwallCrtConfigUi/Options/Scalines Interval/scanlines_interval_slider")
+BLOOM_SHADER = ExtResource("29_aii1a")
+BLURX_SHADER = ExtResource("2_vteqg")
+BLURY_SHADER = ExtResource("28_yx2vx")
+CRT_SHADER = ExtResource("28_aii1a")
 
 [node name="preblur_x" type="CanvasLayer" parent="." unique_id=1725093549]
 layer = 100

@@ -16,10 +16,10 @@ var is_enabled: float = true
 
 var current_scale: float = 1.0
 
-const BLOOM_SHADER = preload("res://addons/flowerwall_crt/shaders/bloom_shader.material")
-const BLURX_SHADER = preload("res://addons/flowerwall_crt/shaders/blurx_shader.material")
-const BLURY_SHADER = preload("res://addons/flowerwall_crt/shaders/blury_shader.material")
-const CRT_SHADER = preload("res://addons/flowerwall_crt/shaders/crt_shader.material")
+@export var BLOOM_SHADER: Material
+@export var BLURX_SHADER: ShaderMaterial
+@export var BLURY_SHADER: ShaderMaterial
+@export var CRT_SHADER: ShaderMaterial
 
 func _ready() -> void:
 	should_enable_blur()
